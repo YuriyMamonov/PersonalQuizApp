@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Introduction View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PersonalQuizApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="IntroductionViewController" customModule="PersonalQuizApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -84,7 +84,7 @@
         <!--Вопрос №-->
         <scene sceneID="hBf-Hn-LA1">
             <objects>
-                <viewController id="s7K-ez-gYN" sceneMemberID="viewController">
+                <viewController id="s7K-ez-gYN" customClass="QuestionViewController" customModule="PersonalQuizApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UnQ-jH-edb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -94,6 +94,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Kt-xs-J1T">
                                         <rect key="frame" x="144.5" y="0.0" width="46" height="30"/>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                         <state key="normal" title="Button"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Qa-LT-gIH">
@@ -206,6 +207,15 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKc-pF-9Ue">
+                                <rect key="frame" x="20" y="116" width="335" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="I2L-Oe-Xrh">
+                                <rect key="frame" x="16" y="116" width="343" height="2"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -214,10 +224,17 @@
                             <constraint firstItem="asK-Xy-8zu" firstAttribute="trailing" secondItem="bQ0-FU-d7I" secondAttribute="trailing" constant="20" id="65C-j5-ySB"/>
                             <constraint firstItem="DL9-jC-seY" firstAttribute="leading" secondItem="asK-Xy-8zu" secondAttribute="leading" constant="20" id="HZX-hM-e2y"/>
                             <constraint firstItem="DL9-jC-seY" firstAttribute="centerY" secondItem="UnQ-jH-edb" secondAttribute="centerY" constant="32" id="IFy-Aw-jb8"/>
+                            <constraint firstItem="I2L-Oe-Xrh" firstAttribute="trailing" secondItem="UnQ-jH-edb" secondAttribute="trailingMargin" id="QCb-nA-fpn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="I2L-Oe-Xrh" secondAttribute="trailing" id="R34-jK-jTO"/>
+                            <constraint firstItem="I2L-Oe-Xrh" firstAttribute="leading" secondItem="UnQ-jH-edb" secondAttribute="leadingMargin" id="XXB-bl-9sw"/>
+                            <constraint firstItem="sKc-pF-9Ue" firstAttribute="top" secondItem="asK-Xy-8zu" secondAttribute="top" constant="8" id="ZlA-xr-XnZ"/>
                             <constraint firstItem="Yz7-GJ-PjN" firstAttribute="leading" secondItem="asK-Xy-8zu" secondAttribute="leading" constant="20" id="dmJ-Ae-YjY"/>
                             <constraint firstItem="asK-Xy-8zu" firstAttribute="trailing" secondItem="DL9-jC-seY" secondAttribute="trailing" constant="32" id="eFF-mq-SjC"/>
                             <constraint firstItem="bQ0-FU-d7I" firstAttribute="leading" secondItem="asK-Xy-8zu" secondAttribute="leading" constant="20" id="hve-kk-7HE"/>
+                            <constraint firstItem="I2L-Oe-Xrh" firstAttribute="leading" secondItem="UnQ-jH-edb" secondAttribute="leadingMargin" id="i1j-Bl-6zj"/>
                             <constraint firstItem="Yz7-GJ-PjN" firstAttribute="centerY" secondItem="UnQ-jH-edb" secondAttribute="centerY" constant="32" id="khz-MF-drb"/>
+                            <constraint firstItem="asK-Xy-8zu" firstAttribute="trailing" secondItem="sKc-pF-9Ue" secondAttribute="trailing" constant="20" id="lfs-ki-41b"/>
+                            <constraint firstItem="sKc-pF-9Ue" firstAttribute="leading" secondItem="asK-Xy-8zu" secondAttribute="leading" constant="20" id="lwa-rf-0L7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="asK-Xy-8zu"/>
                     </view>
@@ -229,17 +246,39 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="multipleStackView" destination="bQ0-FU-d7I" id="Q9L-1q-V07"/>
+                        <outlet property="questionLabel" destination="sKc-pF-9Ue" id="23u-A8-y08"/>
+                        <outlet property="questionProgressView" destination="I2L-Oe-Xrh" id="rMe-in-9zv"/>
+                        <outlet property="rangedSlider" destination="btZ-bH-V8Q" id="I7k-oW-plY"/>
+                        <outlet property="rangedStackView" destination="DL9-jC-seY" id="HZv-nd-RqY"/>
+                        <outlet property="singleStackView" destination="Yz7-GJ-PjN" id="Cif-Ca-iSP"/>
+                        <outletCollection property="singleButtons" destination="Yz7-GJ-PjN" collectionClass="NSMutableArray" id="H6u-eb-VX0"/>
+                        <outletCollection property="singleButtons" destination="Yz7-GJ-PjN" collectionClass="NSMutableArray" id="bcX-rz-aB5"/>
+                        <outletCollection property="singleButtons" destination="Yz7-GJ-PjN" collectionClass="NSMutableArray" id="VkX-dD-HHZ"/>
+                        <outletCollection property="singleButtons" destination="Yz7-GJ-PjN" collectionClass="NSMutableArray" id="rTc-XI-hvE"/>
+                        <outletCollection property="multipleLabels" destination="bQ0-FU-d7I" collectionClass="NSMutableArray" id="OkP-KC-KT8"/>
+                        <outletCollection property="multipleLabels" destination="bQ0-FU-d7I" collectionClass="NSMutableArray" id="9E6-5i-yLa"/>
+                        <outletCollection property="multipleLabels" destination="bQ0-FU-d7I" collectionClass="NSMutableArray" id="ILg-05-bfK"/>
+                        <outletCollection property="multipleLabels" destination="bQ0-FU-d7I" collectionClass="NSMutableArray" id="8CB-Yv-xDA"/>
+                        <outletCollection property="multipleSwitches" destination="bQ0-FU-d7I" collectionClass="NSMutableArray" id="0SG-Oe-AOC"/>
+                        <outletCollection property="multipleSwitches" destination="bQ0-FU-d7I" collectionClass="NSMutableArray" id="7as-cB-495"/>
+                        <outletCollection property="multipleSwitches" destination="bQ0-FU-d7I" collectionClass="NSMutableArray" id="Hyq-WH-8sL"/>
+                        <outletCollection property="multipleSwitches" destination="bQ0-FU-d7I" collectionClass="NSMutableArray" id="gVl-Ra-AL6"/>
+                        <outletCollection property="rangedLabels" destination="OUz-Vr-QtI" collectionClass="NSMutableArray" id="IQI-e5-ivM"/>
+                        <outletCollection property="rangedLabels" destination="kuE-5P-Orm" collectionClass="NSMutableArray" id="6fB-Dt-aLL"/>
+                        <outletCollection property="rangedLabels" destination="OUz-Vr-QtI" collectionClass="NSMutableArray" id="IBY-ZR-XR0"/>
+                        <outletCollection property="rangedLabels" destination="kuE-5P-Orm" collectionClass="NSMutableArray" id="uM0-Nw-1Ks"/>
                         <segue destination="mIh-2l-PCn" kind="show" identifier="ResultSegue" id="imO-JT-Dmd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ah-OZ-qGr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1545" y="109"/>
+            <point key="canvasLocation" x="1544.8" y="108.39580209895054"/>
         </scene>
         <!--Результаты-->
         <scene sceneID="cTl-6V-ccX">
             <objects>
-                <viewController id="mIh-2l-PCn" sceneMemberID="viewController">
+                <viewController id="mIh-2l-PCn" customClass="ResultsViewController" customModule="PersonalQuizApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hYF-hL-PWP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -271,10 +310,15 @@
                         <viewLayoutGuide key="safeArea" id="s4J-Wr-qf7"/>
                     </view>
                     <navigationItem key="navigationItem" title="Результаты" id="a4a-f8-Be3">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Coi-jS-Mbr"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Coi-jS-Mbr">
+                            <connections>
+                                <segue destination="joS-1E-Hie" kind="unwind" unwindAction="unwindSegue:" id="8Jr-f7-fdr"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vuk-N0-whx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="joS-1E-Hie" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2266" y="109"/>
         </scene>
