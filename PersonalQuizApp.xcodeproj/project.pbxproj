@@ -13,6 +13,7 @@
 		448DF0CE23FA6EB50006DB9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 448DF0CC23FA6EB50006DB9E /* Main.storyboard */; };
 		448DF0D023FA6EB60006DB9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 448DF0CF23FA6EB60006DB9E /* Assets.xcassets */; };
 		448DF0D323FA6EB60006DB9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 448DF0D123FA6EB60006DB9E /* LaunchScreen.storyboard */; };
+		448DF0DB23FA8F590006DB9E /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448DF0DA23FA8F590006DB9E /* Question.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		448DF0CF23FA6EB60006DB9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		448DF0D223FA6EB60006DB9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		448DF0D423FA6EB60006DB9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		448DF0DA23FA8F590006DB9E /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +44,7 @@
 			children = (
 				448DF0C523FA6EB50006DB9E /* PersonalQuizApp */,
 				448DF0C423FA6EB50006DB9E /* Products */,
+				448DF0C823FA6EB50006DB9E /* SceneDelegate.swift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +59,55 @@
 		448DF0C523FA6EB50006DB9E /* PersonalQuizApp */ = {
 			isa = PBXGroup;
 			children = (
-				448DF0C623FA6EB50006DB9E /* AppDelegate.swift */,
-				448DF0C823FA6EB50006DB9E /* SceneDelegate.swift */,
-				448DF0CA23FA6EB50006DB9E /* ViewController.swift */,
-				448DF0CC23FA6EB50006DB9E /* Main.storyboard */,
-				448DF0CF23FA6EB60006DB9E /* Assets.xcassets */,
-				448DF0D123FA6EB60006DB9E /* LaunchScreen.storyboard */,
-				448DF0D423FA6EB60006DB9E /* Info.plist */,
+				448DF0DD23FA8FB00006DB9E /* Model */,
+				448DF0DE23FA900A0006DB9E /* View */,
+				448DF0DC23FA8F830006DB9E /* Controller */,
+				448DF0DF23FA90560006DB9E /* Supporting Files */,
+				448DF0E023FA90D60006DB9E /* Resources */,
 			);
 			path = PersonalQuizApp;
+			sourceTree = "<group>";
+		};
+		448DF0DC23FA8F830006DB9E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				448DF0CA23FA6EB50006DB9E /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		448DF0DD23FA8FB00006DB9E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				448DF0DA23FA8F590006DB9E /* Question.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		448DF0DE23FA900A0006DB9E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				448DF0D123FA6EB60006DB9E /* LaunchScreen.storyboard */,
+				448DF0CC23FA6EB50006DB9E /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		448DF0DF23FA90560006DB9E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				448DF0D423FA6EB60006DB9E /* Info.plist */,
+				448DF0C623FA6EB50006DB9E /* AppDelegate.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		448DF0E023FA90D60006DB9E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				448DF0CF23FA6EB60006DB9E /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				448DF0CB23FA6EB50006DB9E /* ViewController.swift in Sources */,
+				448DF0DB23FA8F590006DB9E /* Question.swift in Sources */,
 				448DF0C723FA6EB50006DB9E /* AppDelegate.swift in Sources */,
 				448DF0C923FA6EB50006DB9E /* SceneDelegate.swift in Sources */,
 			);
@@ -286,7 +330,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3DZ9XQZH2G;
-				INFOPLIST_FILE = PersonalQuizApp/Info.plist;
+				INFOPLIST_FILE = "PersonalQuizApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,7 +348,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3DZ9XQZH2G;
-				INFOPLIST_FILE = PersonalQuizApp/Info.plist;
+				INFOPLIST_FILE = "PersonalQuizApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
