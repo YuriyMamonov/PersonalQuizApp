@@ -220,12 +220,6 @@
                             <constraint firstItem="Yz7-GJ-PjN" firstAttribute="centerY" secondItem="UnQ-jH-edb" secondAttribute="centerY" constant="32" id="khz-MF-drb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="asK-Xy-8zu"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="Yz7-GJ-PjN"/>
-                                <exclude reference="DL9-jC-seY"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Вопрос №" id="QA4-ma-t8B">
                         <barButtonItem key="rightBarButtonItem" title="3 =&gt;" id="59b-41-dBS">
